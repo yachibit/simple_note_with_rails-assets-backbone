@@ -12,6 +12,12 @@ class NotesController < ApplicationController
   def show
   end
 
+  def rendering
+    @note = Note.new do |n|
+      n.raw_body = params[:raw_body]
+    end
+  end
+
   # GET /notes/new
   def new
     @note = Note.new
